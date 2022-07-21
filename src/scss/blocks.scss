@@ -1,0 +1,46 @@
+.container {
+  max-width: $containerWidth + px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  .page {
+    flex: 1 1 auto;
+  }
+  height: 100vh;
+}
+
+.title {
+  font-family: $secondary;
+  font-weight: 600;
+  @include adaptive-value('font-size', 48, 28, 1);
+  line-height: calc(70 / 48 * 100%);
+  text-transform: capitalize;
+  color: $darkBlue;
+}
+
+.big-text {
+  font-size: rem(20);
+  line-height: calc(36 / 20 * 100%);
+  color: $grey;
+}
+
+.text {
+  font-size: rem(18);
+  line-height: calc(36 / 18 * 100%);
+  color: $grey;
+}
+
+.btn {
+  font-family: $secondary;
+  text-align: center;
+  font-size: rem(18);
+  line-height: calc(28 / 18 * 100%);
+  background-color: $orange;
+  border-radius: 35px;
+  padding: rem(24) rem(40);
+}

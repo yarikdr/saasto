@@ -1,8 +1,20 @@
 import '../scss/style';
 import '../index';
-// const burger = document.querySelector('.burger'),
-//       menu = document.querySelector('.header__menu');      
-// burger.addEventListener('click', () => {
-//   burger.classList.toggle('active');
-//   menu.classList.toggle('active');
-// });
+import services from './services/services';
+
+try {
+  services.burgerActive('.burger', '.menu');
+} catch (error) {
+  console.log(error);  
+}
+
+try {
+  services.moveElement({
+    size: 914, 
+    what: '.header__active', 
+    firstCase: {where: '.header__menu', index: null}, 
+    secondCase: {where: '.header__inner', index: null}
+  });
+} catch (error) {
+  console.log(error);
+}
