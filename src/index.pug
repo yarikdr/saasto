@@ -26,5 +26,18 @@ html(lang="en")
                 li.number-item 
                   .number-item__number #{num.number}
                   h6.number-item__title.text #{num.title}
-           
+        section.features 
+          .container 
+            .features__inner 
+              .features__title.title Some excellent #[span.shape features] for you
+              .features__text.text An enim nullam tempor sapien gravida donec enim ipsum porta justo  congue magna at pretium purus pretium ligula 
+              ul.features__blocks  
+                each feature in features
+                  li.feature
+                    .feature__icon 
+                      img(src=`./img/features/${feature.img}`, alt="None")
+                    .feature__title #{feature.title}
+                    .feature__text #{feature.text}
+                  
+
       include pug/footer.pug

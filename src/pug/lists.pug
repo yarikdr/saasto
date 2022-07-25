@@ -1,6 +1,22 @@
 -
+  function createList(props, lists) {
+    return lists.map(list => {
+      const obj = {};
+      list.forEach((el, i) => {
+        obj[`${props[i]}`] = el;
+      });
+      return obj;
+    });
+  }
+
   const numbers = [
     {number: '15k+',title: 'Active user'},
     {number: '30k',title: 'Total Download'},
     {number: '10k',title: 'Customer'},
   ];
+
+  const features = createList(['img', 'title', 'text'], [
+    ['01.svg', 'Preset List of Task', 'Make bill payments easily using the wallet app'],
+    ['02.svg', 'Reminder of Task', 'Make bill payments easily using the wallet app'],
+    ['03.svg', 'Complecation Report', 'Make bill payments easily using the wallet app'],
+  ]);

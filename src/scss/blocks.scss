@@ -6,7 +6,8 @@
   max-width: $containerWidth + px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  @include adaptive-value('padding-left', 5, 24, 1);
+  @include adaptive-value('padding-right', 5, 24, 1);
 }
 
 .wrapper {
@@ -21,7 +22,7 @@
 .title {
   font-family: $secondary;
   font-weight: 600;
-  @include font-size(48, 28);
+  @include font-size(48, 24);
   line-height: calc(70 / 48 * 100%);
   text-transform: capitalize;
   color: $darkBlue;

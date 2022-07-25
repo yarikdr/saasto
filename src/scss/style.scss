@@ -5,10 +5,6 @@ body {
   color: $black;
 }
 
-a:focus {
-  outline: none;
-}
-
 .intro {
   position: relative;
   overflow: hidden;
@@ -86,6 +82,7 @@ a:focus {
 .numbers {
   position: relative;
   width: 100%;
+  @include adaptive-value('margin-bottom', 223, 80, 1);
   &__inner {
     @include adaptive-value('padding-top', 94, 48, 1);
     display: grid;
@@ -148,5 +145,93 @@ a:focus {
         bottom: -48px;
       }
     }
+  }
+}
+
+.features {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: capitalize;
+    max-width: 784px;
+    &:not(:last-child) {
+      @include adaptive-value('margin-bottom', 20, 14, 1);
+    }
+  }
+
+  &__text {
+    text-align: center;
+    max-width: 659px;
+    opacity: 0.8;
+    &:not(:last-child) {
+      @include adaptive-value('margin-bottom', 64, 28, 1);
+
+    }
+  }
+
+  &__blocks {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 369px));
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}
+
+.feature {
+  font-family: $secondary;
+  padding: 20px;
+  border-radius: 48px;
+  min-height: 258px;
+  box-shadow: 14px 20px 48px rgba(25, 15, 44, 0.06);
+  &:nth-child(1) {
+    background-color: #70D0DC;
+  }
+  &:nth-child(2) {
+    background-color: #7562E0;
+  }
+  &:nth-child(3) {
+    background-color: #FA865F;
+  }
+  &__icon {
+    border-radius: 24px;
+    width: 88px;
+    height: 88px;
+    background: rgba(255, 255, 255, 0.5);
+    img {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    color: $white;
+    @include font-size(28, 20);
+    line-height: 100%;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    font-size: rem(18);
+    line-height: calc(26 / 18 * 100%);
+    color: $white;
+    opacity: 0.8;
   }
 }
