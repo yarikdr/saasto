@@ -6,8 +6,25 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Saasto
     link(rel="shortcut icon", href="./img/favicon.ico", type="image/x-icon")
+    include pug/lists.pug
   body 
     .wrapper
       include pug/header.pug
       main.page
+        section.intro
+          .container
+            .intro__inner
+              h1.intro__title A collaborative Time #[span.shape Tracking] that you Need
+              .intro__text.big-text An enim nullam tempor sapien gravida donec enim ipsum porta justo  congue magna at pretium purus pretium ligula 
+              a(href="#").intro__btn.btn Start 14 Days Trial
+          //- .intro__images    
+            img(src="./img/intro/mobile2.png", alt="mobile")
+        section.numbers 
+          .container
+            ul.numbers__inner
+              each num in numbers
+                li.number-item 
+                  .number-item__number #{num.number}
+                  h6.number-item__title.text #{num.title}
+           
       include pug/footer.pug

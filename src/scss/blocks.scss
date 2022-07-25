@@ -1,3 +1,7 @@
+.lock {
+  overflow: hidden;
+}
+
 .container {
   max-width: $containerWidth + px;
   width: 100%;
@@ -17,14 +21,14 @@
 .title {
   font-family: $secondary;
   font-weight: 600;
-  @include adaptive-value('font-size', 48, 28, 1);
+  @include font-size(48, 28);
   line-height: calc(70 / 48 * 100%);
   text-transform: capitalize;
   color: $darkBlue;
 }
 
 .big-text {
-  font-size: rem(20);
+  @include font-size(20, 16);
   line-height: calc(36 / 20 * 100%);
   color: $grey;
 }
@@ -43,4 +47,10 @@
   background-color: $orange;
   border-radius: 35px;
   padding: rem(24) rem(40);
+  color: $white;
+  font-weight: 500;
+}
+
+.shape {
+  background: url("../img/svgs/shape.svg") center bottom / 100% auto no-repeat;
 }

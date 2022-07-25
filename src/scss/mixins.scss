@@ -20,6 +20,14 @@
   @return $remSize * 1rem;
 }
 
+@mixin font-size($startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  font-size: rem($startSize);
+  @media (max-width: #{$containerWidth + px}) {
+    font-size: calc((#{rem($minSize)} + #{$addSize} * ((100vw - 320px)) / #{$containerWidth - 320}));
+  }
+}
+
 @function percent($f, $s) {
   @return calc($f / $s * 100%);
 }
